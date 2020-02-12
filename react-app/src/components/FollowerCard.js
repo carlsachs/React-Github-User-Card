@@ -20,12 +20,10 @@ const CardTwo = styled.div`
 const FollowerCard = props => {
     return (
         <CardTwo>
-            <h2>{props.userData.login}</h2>
-            <a href src={this.state.html_url}>Link to Github</a>
-            <h3>Repos:</h3>
-            <h3>{this.state.repos_url}</h3>
-            <h3>Followers: {this.state.followers_url}</h3>
+            <h2>{props.followerData.login}</h2>
+            <h3>Repos: {props.followerData.repos_url}</h3>
+            <h3>Followers: {props.followerData.followers}</h3>
         </CardTwo>
     )
 }
-export default Card;
+export default FollowerCard;

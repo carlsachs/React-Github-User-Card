@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Card from "./components/Card.js";
 import FollowerCard from "./components/FollowerCard.js";
+import FollowerList from "./components/FollowerList.js";
 
 class App extends React.Component {
   state = {
@@ -16,7 +17,7 @@ class App extends React.Component {
     .then(res => {
       console.log(res);
       this.setState({
-        userData: [res.data]
+        userData: res.data
       });
     })
     .catch(err => {
@@ -27,21 +28,20 @@ class App extends React.Component {
     .then(res => {
       console.log("data" , res)
       this.setState({
-        followers: res.data
+        followerData: res.data
       });
     })
     .catch(err => {
       console.log("There's an error", err)
     });
   }
-
   
   render() {
   return (
     <div className="App">
       <h1>GitHub User Card</h1>
       <Card userData={this.state.userData}/>
-      <FollowerCard />
+      <FollowerList followerData={this.state.followerData}/>
     </div>
   );
 }

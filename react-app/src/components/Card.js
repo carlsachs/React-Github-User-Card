@@ -22,11 +22,9 @@ const CardMain = styled.div`
 const Card = props => {
         return (
             <CardMain>
-                <h2>{props.userData}</h2>
-                <a href src="this.state.html_url">Link to Github</a>
-                <h3>Repos:</h3>
-                <h3>this.state.repos_url</h3>
-                <h3>Followers: this.state.followers_url</h3>
+                <h2>{props.userData.login}</h2>
+                <h3>Repos: {props.userData.repos_url}</h3>
+                <h3>Followers: {props.userData.followers}</h3>
             </CardMain>
         )
 }
