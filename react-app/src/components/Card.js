@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const CardMain = styled.div`
     background-color: lightgreen;
@@ -18,12 +19,10 @@ const CardMain = styled.div`
 
 `;
 
-class Card extends React.Component {
-
-    render() {
+const Card = props => {
         return (
             <CardMain>
-                <h2>this.state.login</h2>
+                <h2>this.props.state.login</h2>
                 <a href src="this.state.html_url">Link to Github</a>
                 <h3>Repos:</h3>
                 <h3>this.state.repos_url</h3>
@@ -31,5 +30,4 @@ class Card extends React.Component {
             </CardMain>
         )
     }
-}
 export default Card;
